@@ -12,7 +12,7 @@
    Created: 2025-11-23
 
    Notes:
-     1. 'TR-910%' is used as an example in this query.
+     1. 'TR-910' is used as an example in this query.
         Change it based on your library's call number system.
         Repetition occurs in the case of a category having two different prefixes 
         (e.g., '895.1.' AND '495.1.' in our library).
