@@ -10,7 +10,7 @@
    Created: 2025-11-23
 
    Notes:
-     1. 'F-S823%' is used as an example in this query.
+     1. 'F-S823' is used as an example in this query.
         Change it based on your library's call number system.
         Do NOT modify the rest of the query... unless you know what you're doing.
      2. KOHA installations can differ slightly. Some libraries may have 
