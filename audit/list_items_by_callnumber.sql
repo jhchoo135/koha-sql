@@ -1,5 +1,5 @@
 /*
-   File: list_items_by_callnumber1.sql
+   File: list_items_by_callnumber.sql
 
    Purpose:
      Retrieves the following by category / prefix / item call number:
