@@ -2,7 +2,7 @@
    File: list_items_by_callnumber.sql
 
    Purpose:
-     Retrieves the following by category / prefix / item call number:
+     Retrieves the following by given category / prefix / item call number:
        1. Barcode 
        2. Item Call Number
 
@@ -11,7 +11,9 @@
 
    Notes:
      1. 'F-S823' is used as an example in this query.
-        Change it based on your library's call number system.
+        Change it based on your library's call number system and
+        the category / prefix / item call number required.
+
      2. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
