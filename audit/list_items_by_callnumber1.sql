@@ -32,6 +32,9 @@ ORDER BY
 
     -- If the itemcallnumber has 'Box', get the number after 'Box' for ordering
     -- eg. it gets 1 from 'TR-420.S36.220.nd Box 1'
+    -- SUBSTRING_INDEX(..., 'Box', -1) gets ' 1'
+    -- SUBSTRING_INDEX(..., ' ', -1) gets '1'
+    -- CAST(... AS UNSIGNED) converts '1' into the number 1
     -- The itemcallnumber is arranged by the '1' part
     -- Other itemcallnumber not affected if no 'Box'
    CASE 
