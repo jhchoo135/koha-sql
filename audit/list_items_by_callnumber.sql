@@ -2,9 +2,10 @@
    File: list_items_by_callnumber.sql
 
    Purpose:
-     Retrieves the following by given category / prefix / item call number:
-       1. Barcode 
-       2. Item Call Number
+     Retrieves the following fields:
+        1. Barcode 
+        2. Item Call Number
+      Arranged by given category / prefix / item call number.
 
    Author: JH Choo
    Created: 2025-11-23
@@ -32,8 +33,9 @@ ORDER BY
     -- The itemcallnumber is arranged by the '077' part
     CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(itemcallnumber, '.', 3), '.', -1) AS UNSIGNED),
 
-    -- If the itemcallnumber has 'Box', get the number after 'Box' for ordering
+    -- If the itemcallnumber has 'Box', get the number after 'Box' for ordering / arrangement
     -- eg. it gets 1 from 'TR-420.S36.220.nd Box 1'
+    -- This part can be removed if there is no 'Box' in your given itemcallnumber
     -- SUBSTRING_INDEX(..., 'Box', -1) gets ' 1'
     -- SUBSTRING_INDEX(..., ' ', -1) gets '1'
     -- CAST(... AS UNSIGNED) converts '1' into the number 1
@@ -53,9 +55,10 @@ ORDER BY
     -- 'F-S823.S85.077.2011' that was arranged earlier is not affected
     CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(itemcallnumber, '.', 4), '.', -1) AS UNSIGNED),
    
-    -- Only for YS: ENG / YS: CHI items
+    -- Only for YS: ENG or YS: CHI itemcallnumbers
     -- eg. 'YS: ENG 050.L1-173.2018' or 'YS: CHI 050.L4-03.2022'
-    -- The part below sorts by L1, L2, L3, L4
+    -- The part below arranges YS: ENG or YS: CHI by L1, L2, L3, L4
+    -- This part can be removed if there is no YS: ENG or YS: CHI items in your given itemcallnumber
     -- SUBSTRING_INDEX(..., 'L', -1) gets '1-173.2018' or '4-03.2022'
     -- SUBSTRING_INDEX(..., '-', -1) gets '1' or '4'
     -- CAST(... AS UNSIGNED) converts '1' into the number 1 or '4' into the number 4
@@ -66,8 +69,9 @@ ORDER BY
           ELSE 0
       END,
 
-    -- Only for YS: ENG / YS: CHI items
+    -- Only for YS: ENG or YS: CHI itemcallnumbers
     -- eg. 'YS: ENG 050.L1-173.2018' or 'YS: CHI 050.L4-03.2022'
+    -- This part can be removed if there is no YS: ENG or YS: CHI items in your given itemcallnumber
     -- SUBSTRING_INDEX(..., '-', -1) gets '173.2018' or '03.2022'
     -- SUBSTRING_INDEX(..., '.', 1) gets '173' or '03'
     -- CAST(... AS UNSIGNED) converts '173' into the number 173 or '03' into the number 3
