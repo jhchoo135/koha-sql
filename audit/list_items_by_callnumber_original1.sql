@@ -41,7 +41,11 @@ ORDER BY
     -- eg. 'JF-B823.B43.016.na' or 'JF-B823.B88.032.nd'
     -- RIGHT(..., 6) gets '016.na' / '032.nd'
     -- LEFT(...,3) gets '016' / '032'
-    -- The itemcallnumber is arranged by the '016' / '032' part
+    -- If it does NOT end with 'na' or 'nd'
+    -- eg. 'JF-B823.B85.048.2012'
+    -- RIGHT(..., 8) gets '048.2012'
+    -- LEFT(...,3) gets '048'
+    -- The itemcallnumber is arranged by the '016' / '032' / '048' part
     IF(
         RIGHT(itemcallnumber, 3) LIKE '%nd%' 
         OR RIGHT(itemcallnumber, 3) LIKE '%na%', 
