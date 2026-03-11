@@ -1,5 +1,5 @@
 /*
-   File: list_items_by_callnumber_original1.sql
+   File: list_items_by_callnumber_original.sql
 
    Purpose:
       Retrieves the following fields:
@@ -35,11 +35,13 @@ SELECT
     barcode,
     itemcallnumber
 FROM items
+   
 -- 'YS: ENG 050.L1%' below is an example prefix
 -- Can be replaced with any other prefix / category / itemcallnumber
 -- eg. 'XXX%'(% allows SQL to match anything that follows the prefix)
 WHERE itemcallnumber LIKE 'YS: ENG 050.L1%'
 ORDER BY 
+   
     -- If itemcallnumber ends with 'na' or 'nd'
     -- eg. 'JF-B823.B43.016.na' or 'JF-B823.B88.032.nd'
     -- RIGHT(..., 6) gets '016.na' / '032.nd'
