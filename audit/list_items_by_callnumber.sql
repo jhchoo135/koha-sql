@@ -11,13 +11,22 @@
    Created: 2025-11-23
 
    Notes:
-     1. '895.1.' and '495.1.' are used as examples in this query.
+     1. Minor edits from the original file made for GitHub clarity:
+            * Added OR for cases where two prefixes belong to the same category
+            * Adjusted 'Box' search to match anywhere in itemcallnumber
+              (original only checked the last 3 characters for 'Box')
+            * Fixed an error in the original Young Scientist section
+              (original only handled L1; now accommodates L2, L3, L4, etc.)
+        
+        No other changes were made; everything else remained as per the original
+
+     2. '895.1.' and '495.1.' are used as examples in this query.
         In this case, a category had two different prefixes 
         (e.g., '895.1.' and '495.1.' in our library).
         Change it based on your library's call number system and
         the category / prefix / item call number required.
 
-     2. KOHA installations can differ slightly. Some libraries may have 
+     3. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
