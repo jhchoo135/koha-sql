@@ -59,19 +59,19 @@ ORDER BY
     -- SUBSTRING_INDEX(..., ' ', -1) gets '1'
     -- CAST(... AS UNSIGNED) converts '1' into the number 1
     -- The itemcallnumber is arranged by the '1' part
-    -- Other itemcallnumber not affected if no 'Box'
+    -- Other itemcallnumber not affected
    CASE 
         WHEN itemcallnumber LIKE '%Box%' THEN
             CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(itemcallnumber, 'Box', -1), ' ', -1) AS UNSIGNED)
         ELSE 0
     END,
 
-    -- The SQL sentence below gets 2 from 'F-S823.S65.089.2.2017' 
-    -- SUBSTRING_INDEX(..., '.', 4) gets 'F-S823.S65.089.2'
-    -- SUBSTRING_INDEX(..., '.', -1) gets only '2' 
-    -- CAST(... AS UNSIGNED) converts '2' into the number 2
-    -- The itemcallnumber is now arranged by the '2' part
-    -- 'F-S823.S85.077.2011' that was arranged earlier is not affected
+    -- The SQL sentence below gets 2 from '895.1.A65.564.2020' 
+    -- SUBSTRING_INDEX(..., '.', 4) gets '895.1.A65.564'
+    -- SUBSTRING_INDEX(..., '.', -1) gets only '564' 
+    -- CAST(... AS UNSIGNED) converts '564' into the number 564
+    -- The itemcallnumber is now arranged by the '564' part
+    -- Other itemcallnumbers not affected
     CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(itemcallnumber, '.', 4), '.', -1) AS UNSIGNED),
    
     -- Only for YS: ENG or YS: CHI itemcallnumbers
