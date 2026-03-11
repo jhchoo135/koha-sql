@@ -11,9 +11,11 @@
    Created: 2025-11-23
 
    Notes:
-     1. 'F-S823' is used as an example in this query.
+     1. '895.1.' and '495.1.' are used as examples in this query.
+        In this case, a category had two different prefixes 
+        (e.g., '895.1.' and '495.1.' in our library).
         Change it based on your library's call number system and
-        the prefix / category / item call number required.
+        the category / prefix / item call number required.
 
      2. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
@@ -24,11 +26,16 @@ SELECT
     barcode,
     itemcallnumber
 FROM items
--- 'F-S823%' below is an example prefix
+
+-- OR is used below as both '895.1.' and '495.1.' refer to the same category
+-- '895.1.%', '495.1.%' are example prefixes
+-- Possible to remove 'OR itemcallnumber LIKE '495.1.%'' if only 1 prefix used
 -- Can be replaced with any other prefix / category / itemcallnumber
 -- eg. 'XXX%'(% allows SQL to match anything that follows the prefix)
-WHERE itemcallnumber LIKE 'F-S823%'
+WHERE itemcallnumber LIKE '895.1.%' 
+   OR itemcallnumber LIKE '495.1.%'
 ORDER BY
+   
     -- The SQL sentence below gets 77 from 'F-S823.S85.077.2011' 
     -- SUBSTRING_INDEX(..., '.', 3) gets 'F-S823.S85.077'
     -- SUBSTRING_INDEX(..., '.', -1) gets only '077' 
