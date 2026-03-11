@@ -34,12 +34,19 @@ FROM items i1
 -- Feel free to change the values as needed
 WHERE i1.barcode BETWEEN 0 AND 10000
   
-   -- The line below checks if the next barcode after current i1 barcode exists
+  -- The line below checks if the next barcode after the current i1 barcode exists
+  -- Eg. 1, 2, 3, 5, 6... value becomes TRUE only when i2 = 4
+  -- Eg. 1, 6... value becomes TRUE only when i2 = 2, 3, 4, 5
   AND NOT EXISTS (
       SELECT i2.barcode 
       FROM items i2 
       WHERE i2.barcode = i1.barcode + 1
   )
 
--- To make sure to include only missing barcodes
+-- To make sure only missing barcodes are included
+-- Otherwise, a barcode just after the range might be assumed missing, 
+-- even though it exists outside the defined range
+-- Eg. WHERE i1.barcode BETWEEN 0 AND 10
+-- Eg. 1, 6, 7, 9, 10, 11, 12
+-- If line below is removed, gap_starts_at = 11, gap_ends_at = NULL
 HAVING gap_ends_at IS NOT NULL
