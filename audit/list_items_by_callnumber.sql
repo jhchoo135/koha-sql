@@ -13,7 +13,7 @@
    Notes:
      1. 'F-S823' is used as an example in this query.
         Change it based on your library's call number system and
-        the category / prefix / item call number required.
+        the prefix / category / item call number required.
 
      2. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
@@ -24,6 +24,9 @@ SELECT
     barcode,
     itemcallnumber
 FROM items
+-- 'F-S823%' below is an example prefix
+-- Can be replaced with any other prefix / category / itemcallnumber
+-- eg. 'XXX%'(% allows SQL to match anything that follows the prefix)
 WHERE itemcallnumber LIKE 'F-S823%'
 ORDER BY
     -- The SQL sentence below gets 77 from 'F-S823.S85.077.2011' 
