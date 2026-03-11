@@ -66,7 +66,7 @@ ORDER BY
         ELSE 0
     END,
 
-    -- The SQL sentence below gets 2 from '895.1.A65.564.2020' 
+    -- The SQL sentence below gets 564 from '895.1.A65.564.2020' 
     -- SUBSTRING_INDEX(..., '.', 4) gets '895.1.A65.564'
     -- SUBSTRING_INDEX(..., '.', -1) gets only '564' 
     -- CAST(... AS UNSIGNED) converts '564' into the number 564
