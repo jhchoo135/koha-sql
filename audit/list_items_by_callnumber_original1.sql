@@ -35,6 +35,9 @@ SELECT
     barcode,
     itemcallnumber
 FROM items
+-- 'YS: ENG 050.L1%' below is an example prefix
+-- Can be replaced with any other prefix / category / itemcallnumber
+-- eg. 'XXX%'(% allows SQL to match anything that follows the prefix)
 WHERE itemcallnumber LIKE 'YS: ENG 050.L1%'
 ORDER BY 
     -- If itemcallnumber ends with 'na' or 'nd'
