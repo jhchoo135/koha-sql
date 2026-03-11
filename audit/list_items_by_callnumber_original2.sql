@@ -30,6 +30,9 @@ SELECT
     itemcallnumber
 FROM items
 -- OR is used below as both '895.1.' and '495.1.' both refer to the same category
+-- '895.1.%', '495.1.%' below are example prefixes
+-- Can be replaced with any other prefix / category / itemcallnumber
+-- eg. 'XXX%'(% allows SQL to match anything that follows the prefix)
 WHERE itemcallnumber LIKE '895.1.%' OR itemcallnumber LIKE '495.1.%'
 ORDER BY 
     -- The SQL sentence below gets 77 from 'F-S823.S85.077.2011' 
