@@ -7,8 +7,11 @@
         2. Item Call Number
       Arranged by given category / prefix / item call number.
 
-    Note: 
-      This query is quite fragile. 
+   Author: JH Choo
+   Created: 2025-11-23
+
+   Notes:
+    1. This query is quite fragile. 
       Instead of using delimiters (e.g., '-', '.') to locate positions, 
       it relies on the number of itemcallnumber characters. 
       
@@ -18,15 +21,11 @@
       This was the initial approach before switching to delimiters 
       (list_items_by_callnumber.sql now uses delimiters).
 
-   Author: JH Choo
-   Created: 2025-11-23
-
-   Notes:
-     1. 'YS: ENG 050.L1' is used as an example in this query.
+    2. 'YS: ENG 050.L1' is used as an example in this query.
         Change it based on your library's call number system and
         the category / prefix / item call number required.
 
-     2. KOHA installations can differ slightly. Some libraries may have 
+     3. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
