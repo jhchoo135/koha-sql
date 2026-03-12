@@ -21,11 +21,11 @@ SELECT
 COUNT(CASE WHEN itemcallnumber LIKE 'JNF/%' THEN 1 END) AS 'Junior Non-Fiction Series Total',
 
 -- Line below excludes Junior Fiction Series ('JF-S' prefix) from the count, since it has its own category
--- 'JF-S823' is a Junior Fiction prefix for non-series items (for authors' surname/publishers/titles beginning with 'S')
--- Without 'AND NOT itemcallnumber LIKE 'JF-S823.%'', all authors' surname/publishers/titles beginning with 'S' would be incorrectly subtracted
+-- 'JF-S823.' is a Junior Fiction prefix for non-series items (for authors' surname/publishers/titles beginning with 'S')
+-- Without 'AND NOT itemcallnumber LIKE 'JF-S823.%'', all 'JF-S823.' would be incorrectly subtracted
 (COUNT(CASE WHEN itemcallnumber LIKE 'JF-%' THEN 1 END) - COUNT(CASE WHEN itemcallnumber LIKE 'JF-S%' AND NOT itemcallnumber LIKE 'JF-S823.%' THEN 1 END)) AS 'Junior Fiction Total',
 
--- Line below excludes 'JF-S823' (Junior Fiction prefix for non-series items for authors' surname/publishers/titles beginning with 'S')   
+-- Line below excludes 'JF-S823.' (Junior Fiction prefix for non-series items for authors' surname/publishers/titles beginning with 'S')   
 COUNT(CASE WHEN itemcallnumber LIKE 'JF-S%' AND NOT itemcallnumber LIKE 'JF-S823.%' THEN 1 END) AS 'Junior Fiction Series Total',
 
 COUNT(CASE WHEN itemcallnumber LIKE 'JNF-%' THEN 1 END) AS 'Junior Non-Fiction Total',
