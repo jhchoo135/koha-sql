@@ -21,7 +21,10 @@
      4. LIMIT 50 is to get the top 50 students.
         Adjust the limit (50) in the query as needed.
 
-     5. KOHA installations can differ slightly. Some libraries may have 
+     5. Books are counted once they are checked out within the specified time period, 
+        even if they have not yet been returned.
+
+     6. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
