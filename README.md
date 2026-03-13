@@ -1,5 +1,6 @@
 # koha-sql
 - A collection of SQL queries used for library management and reporting in KOHA when I was a School Librarian.
+- Some queries were created to provide insights not available in standard KOHA reports, such as statistics by series or counts of unique books borrowed.
 - Queries are documented with comments to explain their purpose and guide future use. They helped track circulation, audit records,
   and support data-driven decisions, with notes on adjustments and alternative approaches for accuracy and efficiency.
 - Status: Work in progress — queries will be updated as needed.
@@ -49,13 +50,20 @@ Retrieves a list of patrons (students) who have pending overdue books, unpaid fi
 - *Helps quickly identify students with pending library issues.*
 - *For cases like withdrawals or graduations, the library must notify the relevant departments of any outstanding issues.*
 - *Only works if `Restrictions` and `Restriction Comments` are added to the patron's profile.*
+
+**top_circulated_items_by_series.sql :** 
+Lists the top series or item titles most frequently borrowed by students.
+- *Helps in decision-making regarding which series to continue*
+- *Provides a rough idea of which series or items students enjoy borrowing*
+- *Reports in KOHA do not seem to provide results based on series*
   
 **top_student_borrowers_unique.sql :** 
 Retrieves a list of students with the most number of unique books borrowed.
 - *Used for a program encouraging reading.*
 - *Some students were borrowing the same book repeatedly, which raised questions from teachers and parents.*
 - *By counting only unique books borrowed, the program encourages students to read a wider variety of titles.*
+- *Reports in KOHA do not seem to provide results based on the unique number of books borrowed*
 - *Slight edit needed to ensure results are accurate (see Notes #1 in file)*
 
 ## Author
-JH Choo – ex-school librarian and former software engineer
+JH Choo – former school librarian and former software engineer
