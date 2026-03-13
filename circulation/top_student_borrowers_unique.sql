@@ -2,8 +2,13 @@
    File: top_student_borrowers_unique.sql
 
    Purpose:
-  Lists student borrowers ranked by the number of unique titles they have borrowed within a certain date range.
-  Useful for identifying the most active borrowers in the system.
+     Lists student borrowers ranked by the number of unique titles they have borrowed within a certain date range.
+     Useful for identifying the most active borrowers in the system.
+
+     Retrieves the following fields:
+               1) Student ID
+               2) Student Name (firstname + surname)
+               3) Total (number of unique books borrowed)
 
    Author: JH Choo
    Created: 2025-11-23
