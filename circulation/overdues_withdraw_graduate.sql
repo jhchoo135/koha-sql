@@ -9,13 +9,24 @@
                        4) 'Withdraw'
                        5) Other cases (includes graduating)
 
+   Retrieves the following fields:
+                       1) Card Number (ID Tag Number)
+                       2) Surname
+                       3) First Name
+                       4) Restriction Comments
+
    Author: JH Choo
    Created: 2025-11-23
 
    Notes:
-     1. KOHA installations can differ slightly. Some libraries may have 
-        custom fields or table modifications. Always check your local 
-        database schema before running queries.
+     1. 'categorycode' is not used, as only students are charged overdues
+         at the time of writing.
+
+     2. This query is only useful if restriction comments field are filled.
+
+     3. KOHA installations can differ slightly. Some libraries may have 
+     custom fields or table modifications. Always check your local 
+     database schema before running queries.
 */
 
 SELECT 
