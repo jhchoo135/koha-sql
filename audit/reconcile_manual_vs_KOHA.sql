@@ -2,18 +2,18 @@
    File: reconcile_manual_vs_system.sql
 
    Purpose:
-  Retrieve records in KOHA to be compared with 
-  manual backup records (Excel sheets) to ensure data consistency.
+     Retrieve records in KOHA to be compared with 
+     manual backup records (Excel sheets) to ensure data consistency.
 
-  The query will retrieve: 
-   - ISBN / ISSN
-   - Title
-   - Synopsis
-   - Author
-   - Publisher
-   - Publication Date
-   - DDC (itemcallnumber)
-   - Barcode
+     Retrieves the following fields: 
+         - ISBN / ISSN
+         - Title
+         - Synopsis
+         - Author
+         - Publisher
+         - Publication Date
+         - DDC (itemcallnumber)
+         - Barcode
 
    Author: JH Choo
    Created: 2025-11-23
