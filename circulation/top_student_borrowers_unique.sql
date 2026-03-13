@@ -9,6 +9,13 @@
    Created: 2025-11-23
 
    Notes:
+     1. In hindsight, this query should have included 's.type = 'issue'' in its filtering.
+        Without it, a book borrowed in Term 1 but returned in Term 2 could be counted in both terms 
+        even if the date range only covers Term 2.
+
+        The issue went unnoticed because most students return their books before the term holidays.
+        Those that don't usually borrow fewer books that term, or were never in the top borrowers list at all.
+
      1. Table aliases (eg. b.cardnumber, s.itemnumber, etc.) added for clarity.
         No other changes were made; everything else remained as per the original.
 
@@ -21,10 +28,7 @@
      4. LIMIT 50 is to get the top 50 students.
         Adjust the limit (50) in the query as needed.
 
-     5. Books are counted once they are checked out within the specified time period, 
-        even if they have not yet been returned.
-
-     6. KOHA installations can differ slightly. Some libraries may have 
+     5. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
