@@ -14,7 +14,8 @@
         even if the date range only covers Term 2.
 
         The issue went unnoticed because most students return their books before the term holidays.
-        Those that don't usually borrow fewer books that term, or were never in the top borrowers list at all.
+        Students who don’t return books before the holidays generally borrow fewer books after, 
+        so they either drop out of the top borrowers list naturally or were never on it in the first place.
 
      1. Table aliases (eg. b.cardnumber, s.itemnumber, etc.) added for clarity.
         No other changes were made; everything else remained as per the original.
