@@ -7,7 +7,7 @@
 ### **audit/**
 **count_items_by_category.sql :**
 Lists the number of items in each category / prefix / itemcallnumber.
-- *Used to check if the number of items in the system for each category tallies with the manual records maintained in two other sources.*
+- *Used to check if the number of items in the system for each category tallies with the manual records maintained in other sources.*
 - *Helps to double-check if items are recorded properly during cataloguing and for stock-take purposes.*
   
 **list_items_by_callnumber.sql :**
@@ -31,7 +31,14 @@ Retrieves gaps between sequential barcodes in the system within a specified rang
   
 **quick_cataloguing.sql :**
 Retrieves the highest barcode in the system’s numbering sequence, as well as the last barcode and full itemcallnumber of the specified prefixes/categories.
-- *Designed to reduce manual data entry errors by relying solely on system records rather than updating the two manual files.*
+- *Designed to reduce manual data entry errors by relying solely on system records rather than updating the manual files.*
+- Previous Workflow :
+
+- -1. Insert record in system  
+- -2. Then, Excel Sheet 1 (all data)  
+- -3. Followed by Excel Sheet 2 (barcode and item call number for each category)  
+- -4. And lastly Excel Sheet 3 (ISBN, book title, how book is sourced)
+
 - *Not currently in use, as the manual files were retained.*
 
 ### **circulation/**
