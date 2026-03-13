@@ -1,6 +1,8 @@
 # koha-sql
-- All the SQL I used in KOHA when I was a school librarian. 
-- Still a work in progress, will be updated from time to time until completed.
+- A collection of SQL queries used for library management and reporting in KOHA when I was a School Librarian.
+- Queries are documented with comments to explain their purpose and guide future use. They helped track circulation, audit records,
+  and support data-driven decisions, with notes on adjustments and alternative approaches for accuracy and efficiency.
+- Status: Work in progress — queries will be updated as needed.
 
 ## Contents
 
