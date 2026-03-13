@@ -5,6 +5,10 @@
    Lists gaps between barcodes in the system within a specified range.
    Useful for identifying unused barcodes in sequence.
 
+   Retrieves the following fields: 
+      1) gap_starts_at: indicates the barcode at which the missing gap begins
+      2) gap_ends_at: indicates the barcode at which the missing gap ends
+
    Author: Online Source
    Created: 2025-11-23
 
