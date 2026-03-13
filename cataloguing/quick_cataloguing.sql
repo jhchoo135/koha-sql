@@ -3,14 +3,18 @@
 
    Purpose:
      Retrieves:
-       1. Last barcode used in the system
+       1. Highest barcode in the system’s numbering sequence
        2. Last barcode used within the given category/prefix
-       3. Last item call number (category/prefix)
+       3. Last item call number within the given category/prefix
+
+     Query originally created to reduce manual recording errors from updating multiple files.
 
    Author: JH Choo
    Created: 2025-11-23
 
    Notes:
+     1. Not suitable for cases where itemcallnumbers are reused.
+
      1. 'YS: ENG 050.L1' is used as an example in this query.
         Change it based on your library's call number system and
         the category / prefix / item call number required.
@@ -26,7 +30,7 @@
 
 SELECT
    
--- Line below gets the very last barcode used in the system
+-- Line below gets the highest barcode in the system’s numbering sequence
 (SELECT barcode FROM items ORDER BY barcode DESC LIMIT 1) as excel_last_barcode,
 
 -- Line below gets last barcode of prefix / category / itemcallnumber given
