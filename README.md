@@ -32,12 +32,12 @@ Retrieves gaps between sequential barcodes in the system within a specified rang
 **quick_cataloguing.sql :**
 Retrieves the highest barcode in the system’s numbering sequence, as well as the last barcode and full itemcallnumber of the specified prefixes/categories.
 - *Designed to reduce manual data entry errors by relying solely on system records rather than updating the manual files.*
-- Previous Workflow :
+- Usual Workflow :
 
-- -1. Insert record in system  
-- -2. Then, Excel Sheet 1 (all data)  
-- -3. Followed by Excel Sheet 2 (barcode and item call number for each category)  
-- -4. And lastly Excel Sheet 3 (ISBN, book title, how book is sourced)
+  1. Insert data into Excel Sheet 1 (all data required in system + some extra info) 
+  2. Copy data into the system  
+  3. Copy data to Excel Sheet 2 (barcode and item call number for each category)  
+  4. Copy data to Excel Sheet 3 (ISBN, book title, how book is sourced)
 
 - *Not currently in use, as the manual files were retained.*
 
@@ -53,6 +53,7 @@ Retrieves a list of students with the most number of unique books borrowed.
 - *Used for a program encouraging reading.*
 - *Some students were borrowing the same book repeatedly, which raised questions from teachers and parents.*
 - *By counting only unique books borrowed, the program encourages students to read a wider variety of titles.*
+- *Slight edit needed to ensure results are accurate (see Notes #1 in file)*
 
 ## Author
 JH Choo – ex-school librarian and former software engineer
