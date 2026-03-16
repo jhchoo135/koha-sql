@@ -67,11 +67,11 @@ JOIN borrowers b ON b.borrowernumber = d.borrowernumber
 GROUP BY 
     b.borrowernumber, b.cardnumber, b.surname, b.firstname
 
--- There are alternative ways of doing this
 -- Patron results are arranged by the comment restrictions
 -- Comment restrictions with 'Pending Overdue Book' will be displayed first,
 -- followed by 'Pending Overdue Charges', then 'Pending', then 'Withdraw'
 -- Any other comments that do not fit the sentences mentioned will be displayed later in the list
+-- There are alternative ways to arrange students by comment restrictions
 ORDER BY 
     CASE 
         WHEN SUM(d.comment LIKE '%Pending Overdue Book%') > 0 THEN 0
