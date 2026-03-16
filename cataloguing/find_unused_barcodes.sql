@@ -15,7 +15,9 @@
    Notes:
      1. Works for barcodes that are numeric and sequential.
 
-     2. KOHA installations can differ slightly. Some libraries may have 
+     2. For 'BETWEEN 0 AND 10000', adjust the barcode range as needed.
+
+     3. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
