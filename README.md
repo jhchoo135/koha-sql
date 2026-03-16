@@ -1,9 +1,10 @@
 # koha-sql
-- A collection of SQL queries used for library management and reporting in KOHA when I was a School Librarian.
+- A collection of SQL queries used for library management and reporting in KOHA during my time as a School Librarian (tenure ended in December 2025).
+- The library contains over 12,000 items, with records maintained across the KOHA system and multiple manual records for verification and tracking.
 - Some queries were created to provide insights not available in standard KOHA reports, such as statistics by series or counts of unique books borrowed.
 - Queries are documented with comments to explain their purpose and guide future use. They helped track circulation, audit records,
   and support data-driven decisions, with notes on adjustments and alternative approaches for accuracy and efficiency.
-- Status: Work in progress — queries will be updated as needed.
+- Status: Work in progress — queries will be updated over time.
 
 ## Contents
 
@@ -23,8 +24,8 @@ Primitive version of the above query that uses fixed character positions rather 
   
 **reconcile_manual_vs_KOHA.sql :**
 Retrieves data as per one of the manual records.
-- *Used to check if all the records in the system and the manual record tallies*
-- *Helps to double-check if items are recorded properly during cataloguing*
+- *Used to verify that the records in the system match the manual records.*
+- *Helps to double-check if items are recorded properly during cataloguing.*
 - *A full verification has not been performed; only `itemcallnumber` and `barcode` fields were confirmed to match across all files.*
 
 ### **cataloguing/** 
@@ -34,8 +35,8 @@ Retrieves gaps between sequential barcodes in the system within a specified rang
   
 **quick_cataloguing.sql :**
 Retrieves the highest barcode in the system’s numbering sequence, as well as the last barcode and full itemcallnumber of the specified prefixes/categories.
-- *Designed to reduce manual data entry errors by relying solely on system records rather than updating the manual files.*
-- Usual Workflow :
+- *Designed to reduce manual data entry errors by treating the system as the primary record and updating manual files using data pulled from the system rather than manual copying.*
+- Typical workflow (order varies depending on who updates the records):
 
   1. Insert data into Excel Sheet 1 (all data required in system + some extra info) 
   2. Copy data into the system  
@@ -52,17 +53,17 @@ Retrieves a list of patrons (students) who have pending overdue books, unpaid fi
 - *Only works if `Restrictions` and `Restriction Comments` are added to the patron's profile.*
 
 **top_circulated_items_by_series.sql :** 
-Lists the top series or item titles most frequently borrowed by students.
-- *Helps in decision-making regarding which series to continue*
-- *Provides a rough idea of which series or items students enjoy borrowing*
-- *Reports in KOHA do not seem to provide results based on series*
+Lists the top series or item titles borrowed most frequently by students.
+- *Improves readability of borrowing reports by grouping items by series rather than displaying them individually.*
+- *Provides insight into student borrowing preferences and helps inform decisions on which series to continue acquiring.*
+- *Reports in KOHA do not appear to provide results based on series*
   
 **top_student_borrowers_unique.sql :** 
 Retrieves a list of students with the most number of unique books borrowed.
 - *Used for a program encouraging reading.*
 - *Some students were borrowing the same book repeatedly, which raised questions from teachers and parents.*
 - *By counting only unique books borrowed, the program encourages students to read a wider variety of titles.*
-- *Reports in KOHA do not seem to provide results based on the unique number of books borrowed*
+- *Reports in KOHA do not appear to provide results based on the unique number of books borrowed*
 - *Slight edit needed to ensure results are accurate (see Notes #1 in file)*
 
 ## Author
