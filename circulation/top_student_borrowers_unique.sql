@@ -22,19 +22,19 @@
         Students who don’t return books before the holidays generally borrow fewer books after, 
         so they either drop out of the top borrowers list naturally or were never on it in the first place.
 
-     1. Table aliases (eg. b.cardnumber, s.itemnumber, etc.) added for clarity.
+     2. Table aliases (eg. b.cardnumber, s.itemnumber, etc.) added for clarity.
         No other changes were made; everything else remained as per the original.
 
-     2. '2024-04-22' and '2024-06-01' are examples used in this query.
+     3. '2024-04-22' and '2024-06-01' are examples used in this query.
          Adjust the dates in the query as needed.
 
-     3. AND b.categorycode = 'ST' is added to the query because we are only interested in student borrowers.
+     4. AND b.categorycode = 'ST' is added to the query because we are only interested in student borrowers.
         Remove it or adjust 'ST' to your library patron category code as needed.
 
-     4. LIMIT 50 is to get the top 50 students.
+     5. LIMIT 50 is to get the top 50 students.
         Adjust the limit (50) in the query as needed.
 
-     5. KOHA installations can differ slightly. Some libraries may have 
+     6. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
