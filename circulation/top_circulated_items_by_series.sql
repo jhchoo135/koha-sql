@@ -9,7 +9,7 @@
                1) circs: number of times books had been borrowed
                2) title: series title (or item title if no series)
 
-   Author: JH Choo
+   Author: Online Source, edited by JH Choo
    Created: 2025-11-23
 
    Notes:
