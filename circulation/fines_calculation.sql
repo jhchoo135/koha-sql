@@ -14,17 +14,22 @@
    Created: 2025-11-23
 
    Notes:
-     1. Results include only items borrowed by students (b.categorycode = 'ST').
+     1. Query only works for items that have not yet been returned.
+
+         The library generally runs this query first thing in the morning and 
+         does not refresh it throughout the day.
+
+     2. Results include only items borrowed by students (b.categorycode = 'ST').
         Remove or edit 'AND s.categorycode = 'ST'' as required.
 
-     2. Fines are not calculated when the library is closed,
+     3. Fines are not calculated when the library is closed,
         eg. on Saturdays, Sundays, holidays, including term breaks.
 
         This query will only work if the library holidays and closing days have been set in KOHA.
 
         Overdue fine is RM0.50 per day.
 
-     3. KOHA installations can differ slightly. Some libraries may have 
+     4. KOHA installations can differ slightly. Some libraries may have 
         custom fields or table modifications. Always check your local 
         database schema before running queries.
 */
