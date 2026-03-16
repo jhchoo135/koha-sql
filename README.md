@@ -4,7 +4,7 @@
 - Some queries were created to provide insights not available in standard KOHA reports, such as statistics by series or counts of unique books borrowed.
 - Queries are documented with comments to explain their purpose and guide future use. They helped track circulation, audit records,
   and support data-driven decisions, with notes on adjustments and alternative approaches for accuracy and efficiency.
-- Status: Work in progress — queries will be updated over time.
+- Status: Work in progress — used queries will be uploaded over time.
 
 ## Contents
 
@@ -31,7 +31,7 @@ Retrieves data as per one of the manual records.
 ### **cataloguing/** 
 **find_unused_barcodes.sql :**
 Retrieves gaps between sequential barcodes in the system within a specified range.
-- *The library reuses old barcodes from books that have been weeded out or declared missing after a specified number of years*
+- *The library reuses old barcodes from books that have been weeded out or declared missing after a specified number of years.*
   
 **quick_cataloguing.sql :**
 Retrieves the highest barcode in the system’s numbering sequence, as well as the last barcode and full itemcallnumber of the specified prefixes/categories.
@@ -46,6 +46,13 @@ Retrieves the highest barcode in the system’s numbering sequence, as well as t
 - *Not currently in use, as the manual files were retained.*
 
 ### **circulation/**
+**fines_calculation.sql :**
+Gets a list of overdue items (by barcode), and its due date, days overdue, and fine amount.
+- *The overdue fines function in KOHA was not configured in the library.*
+- *This query provides a quick temporary solution to reduce errors in fine calculation.*
+- *Only includes items that have not been returned.*
+- *Typically run first thing in the morning, before any item movements occur, and not refreshed throughout the day.*
+
 **overdues_withdraw_graduate.sql :**
 Retrieves a list of patrons (students) who have pending overdue books, unpaid fines, other pending library issues, withdrawals, or other issues (including graduation).
 - *Helps quickly identify students with pending library issues.*
